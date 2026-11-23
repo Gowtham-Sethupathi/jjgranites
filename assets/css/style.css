@@ -312,7 +312,6 @@ p { margin: 0 0 1em; }
    Product ranges (products page)
    ========================================================= */
 .range .media { aspect-ratio: 16 / 11; }
-.range__num { font-size: 13px; font-weight: 600; letter-spacing: .14em; color: var(--stone-400); }
 .range h3.sub { font-size: 15px; text-transform: uppercase; letter-spacing: .1em; color: var(--stone-600); margin: 22px 0 12px; }
 .note { display: flex; gap: 12px; padding: 14px 16px; border-radius: var(--radius); background: var(--stone-50); border: 1px solid var(--line); font-size: 14.5px; color: var(--text); margin: 20px 0 0; }
 .note .icon { width: 20px; height: 20px; color: var(--stone-600); margin-top: 2px; }
@@ -358,7 +357,6 @@ p { margin: 0 0 1em; }
 .step { text-align: center; position: relative; }
 .step__dot { width: 64px; height: 64px; margin: 0 auto 18px; border-radius: 50%; display: grid; place-items: center; background: var(--stone-700); border: 3px solid var(--stone-900); box-shadow: 0 0 0 2px rgba(255,255,255,.25); color: #fff; }
 .step__dot .icon { width: 26px; height: 26px; }
-.step__no { display: block; font-size: 12px; letter-spacing: .14em; color: #9aa0a8; font-weight: 600; margin-bottom: 4px; }
 .step h3 { font-size: 18px; margin-bottom: 6px; }
 .step p { font-size: 14.5px; margin: 0; color: rgba(255,255,255,.72); }
 
@@ -550,7 +548,7 @@ p { margin: 0 0 1em; }
   .step { display: grid; grid-template-columns: 52px 1fr; gap: 0 16px; text-align: left; padding-bottom: 22px; }
   .step::before { content: ""; position: absolute; left: 25px; top: 52px; bottom: 0; width: 2px; background: rgba(255,255,255,.16); }
   .step:last-child::before { display: none; }
-  .step__dot { width: 52px; height: 52px; margin: 0; grid-row: span 3; }
+  .step__dot { width: 52px; height: 52px; margin: 0; grid-row: span 2; }
   .step__dot .icon { width: 22px; height: 22px; }
   .step h3 { margin: 0 0 2px; }
 

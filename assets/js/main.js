@@ -105,9 +105,6 @@
           "</a>" +
           '<nav class="nav" aria-label="Main">' + links + "</nav>" +
           '<div class="header__actions">' +
-            '<a class="header__phone" href="' + tel(SITE.phones[0]) + '">' + icon("phone") + SITE.phones[0] + "</a>" +
-            '<a class="btn btn--sm header__cta" href="contact%20us.html#enquiry">Get a Quote</a>' +
-            '<a class="header__call" href="' + tel(SITE.phones[0]) + '" aria-label="Call us">' + icon("phone") + "</a>" +
             '<button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>' +
           "</div>" +
         "</div>" +
@@ -250,15 +247,6 @@
     restart();
   });
 
-  /* ---------- FAQ ---------- */
-  document.querySelectorAll(".faq__q").forEach(function (q) {
-    q.addEventListener("click", function () {
-      var item = q.parentElement, open = item.classList.contains("is-open");
-      item.parentElement.querySelectorAll(".faq__item").forEach(function (i) { i.classList.remove("is-open"); i.querySelector(".faq__q").setAttribute("aria-expanded", "false"); });
-      if (!open) { item.classList.add("is-open"); q.setAttribute("aria-expanded", "true"); }
-    });
-  });
-
   /* ---------- Granite filter ---------- */
   var filters = document.querySelectorAll(".filter");
   filters.forEach(function (f) {
@@ -287,25 +275,6 @@
   });
   lb.addEventListener("click", function (e) { if (e.target !== lbImg) lb.classList.remove("is-open"); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") { lb.classList.remove("is-open"); closeMenu(); } });
-
-  /* ---------- Sticky tabs (products) ---------- */
-  var tabLinks = document.querySelectorAll(".tabs-nav a");
-  if (tabLinks.length && "IntersectionObserver" in window) {
-    var map = {};
-    tabLinks.forEach(function (a) { map[a.getAttribute("href").slice(1)] = a; });
-    var tio = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting && map[e.target.id]) {
-          tabLinks.forEach(function (a) { a.classList.remove("is-active"); });
-          var a = map[e.target.id];
-          a.classList.add("is-active");
-          var bar = a.parentElement;
-          bar.scrollTo({ left: a.offsetLeft - bar.clientWidth / 2 + a.clientWidth / 2, behavior: "smooth" });
-        }
-      });
-    }, { rootMargin: "-40% 0px -55% 0px" });
-    Object.keys(map).forEach(function (id) { var s = document.getElementById(id); if (s) tio.observe(s); });
-  }
 
   /* ---------- Pre-select product from ?product= on the contact page ---------- */
   var form = document.querySelector("[data-enquiry]");

@@ -111,9 +111,6 @@ p { margin: 0 0 1em; }
 .nav__link:hover { background: var(--stone-50); }
 .nav__link.is-active { font-weight: 600; background: var(--stone-100); }
 .header__actions { display: flex; align-items: center; gap: 12px; }
-.header__phone { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14.5px; color: var(--ink); white-space: nowrap; }
-.header__phone .icon { width: 34px; height: 34px; padding: 8px; border-radius: 50%; background: var(--stone-100); color: var(--stone-900); }
-.header__call { display: none; width: 42px; height: 42px; border-radius: 50%; background: var(--stone-100); color: var(--stone-900); place-items: center; }
 .burger { display: none; width: 42px; height: 42px; border-radius: 8px; border: 0; background: var(--stone-900); position: relative; flex-shrink: 0; }
 .burger span { position: absolute; left: 11px; right: 11px; height: 2px; background: #fff; border-radius: 2px; transition: transform .3s, opacity .2s; }
 .burger span:nth-child(1) { top: 14px; } .burger span:nth-child(2) { top: 20px; } .burger span:nth-child(3) { top: 26px; }
@@ -314,12 +311,6 @@ p { margin: 0 0 1em; }
 /* =========================================================
    Product ranges (products page)
    ========================================================= */
-.tabs-nav { position: sticky; top: var(--header-h); z-index: 50; background: #fff; border-bottom: 1px solid var(--line); }
-.tabs-nav__inner { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding: 10px 0; }
-.tabs-nav__inner::-webkit-scrollbar { display: none; }
-.tabs-nav a { white-space: nowrap; padding: 8px 16px; border-radius: 999px; font-size: 14.5px; font-weight: 500; color: var(--muted); border: 1px solid var(--line); transition: background .2s, color .2s, border-color .2s; }
-.tabs-nav a:hover { color: var(--ink); border-color: var(--stone-600); }
-.tabs-nav a.is-active { background: var(--stone-900); border-color: var(--stone-900); color: #fff; }
 .range .media { aspect-ratio: 16 / 11; }
 .range__num { font-size: 13px; font-weight: 600; letter-spacing: .14em; color: var(--stone-400); }
 .range h3.sub { font-size: 15px; text-transform: uppercase; letter-spacing: .1em; color: var(--stone-600); margin: 22px 0 12px; }
@@ -387,24 +378,6 @@ p { margin: 0 0 1em; }
 .slider__nav { display: flex; gap: 10px; }
 .slider__btn { width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--line); background: #fff; color: var(--ink); display: grid; place-items: center; transition: background .2s, color .2s; }
 .slider__btn:hover { background: var(--stone-900); color: #fff; }
-
-/* =========================================================
-   FAQ
-   ========================================================= */
-.faq { display: grid; gap: 12px; max-width: 860px; margin-inline: auto; }
-.faq__item { border-radius: var(--radius); background: #fff; border: 1px solid var(--line); }
-.faq__item.is-open { border-color: var(--stone-600); }
-.faq__q { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 22px; border: 0; background: none; text-align: left; font-size: 16.5px; font-weight: 600; color: var(--ink); }
-.faq__plus { width: 30px; height: 30px; flex-shrink: 0; border-radius: 50%; background: var(--stone-100); position: relative; transition: background .25s; }
-.faq__plus::before, .faq__plus::after { content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 2px; background: var(--stone-900); transform: translate(-50%, -50%); transition: transform .25s, background .25s; }
-.faq__plus::after { transform: translate(-50%, -50%) rotate(90deg); }
-.faq__item.is-open .faq__plus { background: var(--stone-900); }
-.faq__item.is-open .faq__plus::before, .faq__item.is-open .faq__plus::after { background: #fff; }
-.faq__item.is-open .faq__plus::after { transform: translate(-50%, -50%) rotate(0); }
-.faq__a { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .3s var(--ease); }
-.faq__item.is-open .faq__a { grid-template-rows: 1fr; }
-.faq__a > div { overflow: hidden; }
-.faq__a p { padding: 0 22px 20px; margin: 0; color: var(--muted); }
 
 /* =========================================================
    Contact
@@ -487,9 +460,8 @@ p { margin: 0 0 1em; }
    Tablet
    ========================================================= */
 @media (max-width: 1100px) {
-  .nav, .header__phone, .header__cta { display: none; }
+  .nav { display: none; }
   .header__actions { margin-left: auto; }
-  .header__call { display: grid; }
   .burger { display: block; }
   .features--4 { grid-template-columns: repeat(2, 1fr); }
   .stats { grid-template-columns: repeat(2, 1fr); }
